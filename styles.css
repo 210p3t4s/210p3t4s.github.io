@@ -1,6 +1,6 @@
 html{
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: smooth;
+  scroll-snap-stop: always;
   background: rgba(0, 0, 0, 0.756);
 }
 
@@ -9,7 +9,7 @@ html{
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
-  height: 80vh;
+  height: 100vh;
   scroll-snap-align: center;
 }
 
@@ -18,7 +18,7 @@ html{
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
-  height: 80vh;
+  height: 100vh;
   scroll-snap-align: center;
 }
 
