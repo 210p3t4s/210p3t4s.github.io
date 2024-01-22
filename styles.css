@@ -1,6 +1,5 @@
 html {
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
   background: rgba(0, 0, 0, 0.756);
 }
 
