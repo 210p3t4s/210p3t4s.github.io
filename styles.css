@@ -1,6 +1,6 @@
-html{
+html {
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
+  scroll-snap-stop: smooth;
   background: rgba(0, 0, 0, 0.756);
 }
 
@@ -13,15 +13,22 @@ html{
   scroll-snap-align: center;
 }
 
-.img{
-  background-color:  #212f3c ;
+.img-h1 {
+  background-image: url(mobileLanding.jpeg);
+  background-size: cover;
+  -webkit-background-clip: text;
+  font-size: 4em;
+  color: transparent;
+}
+
+.img {
+  background: #9494946e;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
   height: 100vh;
   scroll-snap-align: center;
 }
-
 
 .head {
   background: linear-gradient(
@@ -39,7 +46,7 @@ html{
   justify-content: center;
 }
 
-.main-button{
+.main-button {
   border: 1px solid white;
   margin-bottom: 20px;
   padding: 8px 20px;
@@ -48,9 +55,8 @@ html{
   color: white;
   font-size: 20px;
   cursor: pointer;
-  
 }
-.main-button:hover{
+.main-button:hover {
   background-color: white;
   color: black;
 }
@@ -70,7 +76,20 @@ html{
 }
 
 @media (min-width: 768px) {
+  .img-h1 {
+   
+    -webkit-background-clip: text;
+    font-size: 6em;
+    color: transparent;
+  }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
+  .img-h1 {
+   
+    -webkit-background-clip: text;
+    font-size: 10em;
+    color: transparent;
+  }
 }
+
