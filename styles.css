@@ -1,7 +1,20 @@
 html {
-  scroll-snap-type: y mandatory;
+  font-family: 'Times New Roman medium', Times, serif;
   background: rgba(0, 0, 0, 0.756);
+  scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
+  position: sticky;
+}
+
+*{
+    font-family: 'Times New Roman medium', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+.all{
+  width: 100%;
+  
 
 }
 
@@ -14,22 +27,96 @@ html {
   scroll-snap-align: start;
 }
 
-.img-h1 {
+/*.img-h1 {
   background-image: url(mobileLanding.jpeg);
-  /*background-image: url(blwhht.JPEG);*/
-  background-size: cover;
+  /*background-image: url(blwhht.JPEG);
+  background-size: fixed;
+  background-position: ;
   -webkit-background-clip: text;
   font-size: 4em;
   color: transparent;
+  animation-duration: 0.8s;
+  animation-name: slidein;
+}*/
+
+.img-h1 {
+  background: linear-gradient(90deg, rgba(255,0,0,1) 36%, rgba(255,249,0,1) 96%);
+  background-size: 100% auto;
+  -webkit-background-clip: text;
+  background-clip: none;
+  -webkit-text-fill-color: transparent;
+  font-size: 4em;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
 }
 
 .img {
-  background: rgb(136, 136, 136);
+  background: rgb(0, 0, 0);
   background-size: cover;
-  background-repeat: no-repeat;
+  width: 100%;
   margin: 0;
   height: 100vh;
   scroll-snap-align: start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+}
+
+.video-container{
+  width: 100vh;
+  height: 85vh;
+  background-color: gray;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  margin: 0;
+
+}
+.img div{
+  width: 100%;
+  height: auto;
+}
+
+
+.img div img{
+  left: 0;
+  overflow: scroll;
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+  margin :0;
+  scroll-snap-align: start;
+}
+
+.slider {
+  aspect-ratio: 10 / 9;
+  width: 100px;
+  position: relative;
+  display: flex;
+  overflow: scroll;
+  height: 84vh;
+  scroll-snap-type: x mandatory;
+}
+
+.slider img {
+  width: 100vh;
+  object-fit: cover;
+  scroll-snap-align: center;
+  height: 84vh;
 }
 
 .head {
@@ -42,31 +129,32 @@ html {
 }
 
 .content {
-  min-height: 80vh;
+  min-height: 85vh;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
 .main-button {
-  border: 1px solid white;
+  border: 1px solid transparent;
   margin-bottom: 20px;
   padding: 8px 20px;
   border-radius: 10px;
-  background: white;
-  color: black;
+  background-color: black;
+  color: white;
   font-size: 20px;
   cursor: pointer;
 }
 .main-button:hover {
-  border-color: black;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .hola {
   background-color: rgba(0, 0, 0, 0.404);
 }
+
+
 
 @media (min-width: 768px) {
  
@@ -93,4 +181,3 @@ html {
     height: 100vh;
   }
 }
-
