@@ -12,11 +12,6 @@ html {
     padding: 0;
 }
 
-.all{
-  width: 100%;
-  
-
-}
 
 .main {
   background-image: url(blwhht.png);
@@ -65,8 +60,8 @@ html {
 }
 
 .video-container{
-  width: 100vh;
-  height: 85vh;
+  width: 100%;
+  height: 100vh;
   background-color: gray;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -89,13 +84,14 @@ html {
   object-fit: cover;
   height: 100vh;
   margin :0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 .img div video{
+  overflow: scroll;
   width: 100%;
   height: 100vh;
   margin :0;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 
 .slider {
@@ -125,11 +121,15 @@ html {
 }
 
 .content {
-  min-height: 85vh;
+  width: 100%;
+  min-height: 75vh;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
+
+
+
 
 .main-button {
   border: 1px solid transparent;
