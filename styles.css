@@ -45,7 +45,7 @@ html {
   -webkit-background-clip: text;
   background-clip: none;
   -webkit-text-fill-color: transparent;
-  font-size: 3em;
+  font-size: 4em;
   animation-duration: 1s;
   animation-name: slidein;
 }
