@@ -74,9 +74,6 @@ html {
 .img img{
   height: 100vh;
   object-fit: contain;
-  position: sticky;
-  background-size: cover;
-  margin :0;
   scroll-snap-stop: always;
   scroll-snap-align: center;
 }
