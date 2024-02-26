@@ -1,225 +1,171 @@
 html {
+  font-family: 'Times New Roman medium', Times, serif;
+  background: rgba(0, 0, 0, 0.756);
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+}
+
+*{
     font-family: 'Times New Roman medium', Times, serif;
-    background: rgba(0, 0, 0, 0.756);
-    scroll-snap-type: y mandatory;
-    scroll-snap-stop: always;
+    margin: 0;
+    padding: 0;
+}
+
+
+.main {
+  background-image: url(blwhht.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/*.img-h1 {
+  background-image: url(mobileLanding.jpeg);
+  /*background-image: url(blwhht.JPEG);
+  background-size: fixed;
+  background-position: ;
+  -webkit-background-clip: text;
+  font-size: 4em;
+  color: transparent;
+  animation-duration: 0.8s;
+  animation-name: slidein;
+}*/
+
+.img-h1 {
+  background: linear-gradient(90deg, rgb(208, 4, 4) 36%, rgb(255, 208, 0) 96%);
+  background-size: 100% auto;
+  -webkit-background-clip: text;
+  background-clip: none;
+  -webkit-text-fill-color: transparent;
+  font-size: 4em;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+
+
+.img {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+}
+
+.video-container{
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  margin: 0;
+
+}
+
+
+.img img{
+  height: 100vh;
+  object-fit: cover;
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+}
+.img video{
+  height: 100vh;
+  margin :0;
+  scroll-snap-stop: always;
+  scroll-snap-align: center;
+}
+video::-webkit-media-controls {
+  display: none;
+}
+.slider {
+  aspect-ratio: 10 / 9;
+  width: 100px;
+  position: relative;
+  display: flex;
+  overflow: scroll;
+  height: 84vh;
+  scroll-snap-type: x mandatory;
+}
+
+.slider img {
+  width: 100vh;
+  object-fit: cover;
+  scroll-snap-align: center;
+  height: 84vh;
+}
+
+.head {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(154, 0, 139, 1) 42%,
+    rgba(84, 0, 235, 1) 100%
+  );
+}
+
+.content {
+  width: 100%;
+  height: 80vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.main-button {
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.main-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.hola {
+  background-color: rgba(0, 0, 0, 0.404);
+}
+
+
+
+@media (min-width: 768px) {
+
+}
+@media (min-width: 768px) {
+  .img-h1 {   
+    font-size: 6em;
   }
-  
-  *{
-      font-family: 'Times New Roman medium', Times, serif;
-      margin: 0;
-      padding: 0;
+}
+
+@media (min-width: 1000px) {
+  .img-h1 {
+   
+    font-size: 10em;
+
   }
-  
-  
+
   .main {
-    background-image: url(../asserts/blwhht.png);
+    background-image: url(scn.JPEG);
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     height: 100vh;
-    scroll-snap-align: start;
   }
 
-  article{
-    width: 100%;
-    height: 100vh;
-  }
-  .reseña{
-    height: 100vh;
-    scroll-snap-align: start;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
   
-  /*.img-h1 {
-    background-image: url(mobileLanding.jpeg);
-    /*background-image: url(blwhht.JPEG);
-    background-size: fixed;
-    background-position: ;
-    -webkit-background-clip: text;
-    font-size: 4em;
-    color: transparent;
-    animation-duration: 0.8s;
-    animation-name: slidein;
-  }*/
-  
-  .img-h1 {
-    background: linear-gradient(90deg, rgb(208, 4, 4) 36%, rgb(255, 208, 0) 96%);
-    background-size: 100% auto;
-    -webkit-background-clip: text;
-    background-clip: none;
-    -webkit-text-fill-color: transparent;
-    font-size: 4em;
-    animation-duration: 1s;
-    animation-name: slidein;
-  }
-  
-  
-  
-  .img{
-      display: flex;
-      scroll-snap-align: start; 
-      overflow-x:auto;
-      scroll-snap-type: none;
-      scroll-snap-stop: always;
-    }
-
-    .img img{
-      width: 0px;
-      flex-grow: 1;
-      object-fit: cover;
-      opacity: .8;
-      transition: .5s ease;
-    }
-
-    .img img:hover{
-      cursor: crosshair;
-      width: 500px;
-      opacity: 1;
-      filter: contrast(120%);
-    }
-  
-  .video-container{
-    height: 100vh;
-    background-color: gray;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
-    margin: 0;
-  
-  }
-  
-  
-  
-
-  .video-slice{
-    width: 100%;
-    height: 100vh;
-    margin :0;
-    scroll-snap-stop: always;
-    scroll-snap-align: start;
- 
-  }
-  .video-container video{
-    object-fit: cover;
-    height: 100vh;
-    margin :0;
-    scroll-snap-stop: always;
-    scroll-snap-align: start;
-  }
-  
-  .slider {
-    aspect-ratio: 10 / 9;
-    width: 200px;
-    position: relative;
-    display: flex;
-    overflow: scroll;
-    height: 84vh;
-    scroll-snap-type: x mandatory;
-  }
-  
-  .slider img {
-    width: 100vh;
-    object-fit: cover;
-    scroll-snap-align: center;
-    height: 84vh;
-  }
-  
-  .head {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 1) 0%,
-      rgba(154, 0, 139, 1) 42%,
-      rgba(84, 0, 235, 1) 100%
-    );
-  }
-  
-  .content {
-    width: 100%;
-    height: 80vh;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  
-  
-  .main-button {
-    border: 1px solid transparent;
-    margin-bottom: 20px;
-    padding: 8px 20px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .main-button:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  .hola {
-    background-color: rgba(0, 0, 0, 0.404);
-  }
-  
-  
-  
-  @media (min-width: 768px) {
-  
-  }
-  @media (min-width: 768px) {
-    .img-h1 {   
-      font-size: 6em;
-    }
-    .img{
-      display: flex;
-      scroll-snap-align: start; 
-      overflow-x:auto;
-      scroll-snap-type: none;
-      scroll-snap-stop: always;
-    }
-
-    .img img{
-      width: 0px;
-      flex-grow: 1;
-      object-fit: cover;
-      opacity: .8;
-      transition: .5s ease;
-    }
-
-    .img img:hover{
-      cursor: crosshair;
-      width: 500px;
-      opacity: 1;
-      filter: contrast(120%);
-    }
-
-
-
-
-  
-
-    
-  }
-  
-  @media (min-width: 1000px) {
-    .img-h1 {
-      font-size: 10em;
-  
-    }
-  
-    .main {
-      background-image: url(../asserts/scn.JPEG);
-      background-size: cover;
-      background-repeat: no-repeat;
-      margin: 0;
-      height: 100vh;
-    }
-    
-    
-    
-  }
+}
