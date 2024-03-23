@@ -11,6 +11,16 @@ html {
     padding: 0;
 }
 
+.navbar a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.navbar a:link {
+  font-size: 1em;
+  text-decoration: none;
+  gap: 0.4vh;
+}
 
 .main {
   background-image: url(blwhht.png);
