@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="description" content="Sumérgete en el mundo del arte corporal con nuestro estudio de tatuajes. Desde diseños innovadores hasta clásicos atemporales, 
+    ofrecemos una experiencia única y personalizada para expresar tu estilo y personalidad a través de la tinta. Descubre un espacio donde la creatividad se fusiona con la destreza artística,
+    y donde cada marca se convierte en una obra maestra única en su tipo. 
+    Bienvenido a nuestro universo de tatuajes: donde la imaginación se convierte en realidad sobre la piel.">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,23 +19,29 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>HuelvaTattoo</title>
     <link rel="icon" href="hlvLogo.PNG">
+    <title>HuelvaTattoo</title>
   </head>
   <body>
-    <div class="container-fluid main">
+    <div class="container-fluid main" id="main">
       <div class="row">
-       <nav class="navbar navbar-dark fixed-top">
-          <div class="container-fluid d-flex align-items-center justify-content-between m-1 p-1">
+        <nav class="navbar navbar-dark fixed-top">
+          <div class="container-fluid d-flex align-items-center justify-content-between">
             <a class="navbar-brand text-white" href="index.html"
               ><img
                 src="hlvLogo.PNG"
-                style="width: 13vh; height: 12vh"
+                style="width: 10vh; height: 10vh;"
                 alt="huelva tattoo"
                 srcset="huelva tattoo"
             /></a>
-          <a href="carta.JPG" download="CartaPreciosHLVTattoo">CARTA DE PRECIOS</a>
-          </div>
+            <section class="util d-none d-md-flex">
+              <a href="#main">INICIO</a>
+              <a href="#tattoo">TATTOO</a>
+              <a href="#piercings">PIERCINGS</a>
+              <a href="#mTattoo">MINITATTOO</a>
+            </section>
+            <a href="carta.JPG" download="CartaPreciosHLVTattoo">CARTA DE PRECIOS</a>
+            </div>
         </nav>
       </div>
       <div class="row">
@@ -40,17 +49,36 @@
           <h1 class="img-h1">HLVTATTOO</h1>
         </div>
         <div class="col-12 text-center">
-          <a href="https://wa.me/34611601309?text=Te escribía interesado
-          para concertar una cita para un tattoo">
           <button class="main-button">Tattoo</button>
-        </a>
-          <a href="https://wa.me/34611601309?text=Te escribía interesado
-          para concertar una cita para un Piercing">
-          <button class="main-button">Piercing</button>
-        </a>
+          <button class="main-button">Piercings</button>
         </div>
       </div>
     </div>
+    <div class="container-fluid img d-flex" id="tattoo">
+      
+        <img src="tigre.png" alt="" srcset="" />
+        <img src="backDragon.png" alt="" srcset="" />
+        <img src="flores.jpg" alt="" srcset="" />
+        <img src="egypt.png" alt="" srcset="" />
+        <img src="pajaro.png" alt="" srcset="" />
+        <img src="espalda.png" alt="" srcset="" />
+        <img src="ojo.png" alt="" srcset="" />
+        <img src="knife.png" alt="" srcset="" />
+        <img src="tiger.png" alt="" srcset="" />
+
+        
+      
+    </div>
+    <div class="container-fluid img d-flex" id="mTattoo">
+      <img src="rayo.JPG" alt="" srcset="" />
+      <img src="sacrificio.JPG" alt="" srcset="" />
+      <img src="silueta.JPG" alt="" srcset="" />
+      <img src="letters.JPG" alt="" srcset="" />
+      <img src="cat.JPG" alt="" srcset="" />
+      
+    
+  </div>
+
 
   </body>
 </html>

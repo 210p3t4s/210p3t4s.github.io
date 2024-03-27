@@ -11,6 +11,14 @@ html {
     padding: 0;
 }
 
+.navbar {
+
+}
+
+.util {
+  gap: 4vh;
+}
+
 .navbar a {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -21,6 +29,8 @@ html {
   text-decoration: none;
   gap: 0.4vh;
 }
+
+
 
 .main {
   background-image: url(blwhht.png);
@@ -47,17 +57,16 @@ html {
   background: linear-gradient(90deg, rgb(208, 4, 4) 36%, rgb(255, 208, 0) 96%);
   background-size: 100% auto;
   -webkit-background-clip: text;
+  margin-top: 40px;
   background-clip: none;
   -webkit-text-fill-color: transparent;
-  font-size: 4em;
-  animation-duration: 1s;
-  animation-name: slidein;
+  font-size: 3.5em;
 }
 
 
 
 .img {
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
   width: 100%;
   height: 100vh;
   scroll-snap-align: start;
@@ -84,7 +93,7 @@ html {
   height: 100vh;
   object-fit: cover;
   scroll-snap-stop: always;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 .img video{
   height: 100vh;
@@ -134,13 +143,13 @@ video::-webkit-media-controls {
 
 .main-button {
   border: 1px solid transparent;
-  margin-bottom: 20px;
   padding: 8px 20px;
   border-radius: 10px;
   background-color: black;
   color: white;
   font-size: 20px;
   cursor: pointer;
+  margin-top: 25px;
 }
 .main-button:hover {
   background-color: white;
@@ -160,6 +169,28 @@ video::-webkit-media-controls {
   .img-h1 {   
     font-size: 6em;
   }
+
+  .img {
+    display: flex;
+    scroll-snap-align: start;
+    overflow-x: auto;
+    scroll-snap-type: none;
+    scroll-snap-stop: always;
+  }
+
+  .img img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s ease;
+  }
+
+  .img img:hover {
+    width: 500px;
+    opacity: 1;
+    filter: contrast(120%);
+  }
 }
 
 @media (min-width: 1000px) {
@@ -175,6 +206,10 @@ video::-webkit-media-controls {
     background-repeat: no-repeat;
     margin: 0;
     height: 100vh;
+  }
+
+  .main-button{
+    padding: 10px 60px;
   }
 
   
