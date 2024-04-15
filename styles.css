@@ -94,7 +94,7 @@ a {
   height: 100vh;
   object-fit: cover;
   scroll-snap-stop: always;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 .img video{
   height: 100vh;
