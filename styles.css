@@ -10,19 +10,20 @@ html {
     margin: 0;
     padding: 0;
 }
-
-.navbar {
-
+s
+.a:hover, a.active {
+  color: red;
 }
 
 .util {
   gap: 4vh;
 }
 
-.navbar a {
-  color: rgb(255, 255, 255);
+a {
+  color: white;
   text-decoration: none;
 }
+
 
 .navbar a:link {
   font-size: 1em;
@@ -66,10 +67,10 @@ html {
 
 
 .img {
-  background: rgb(0, 0, 0);
+  background-color: #212121;
   width: 100%;
   height: 100vh;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -85,12 +86,11 @@ html {
   scroll-snap-type: x mandatory;
   scroll-snap-stop: always;
   margin: 0;
-
 }
 
 
 .img img{
-  with: auto;
+  width: auto;
   height: 100vh;
   object-fit: cover;
   scroll-snap-stop: always;
@@ -131,6 +131,53 @@ video::-webkit-media-controls {
   );
 }
 
+.reseña{
+  background-color: #212121;
+  color: rgb(255, 255, 255);
+  top: 0;
+  left: 50;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  
+}
+input{
+  display: none;
+  
+}
+label{
+  color: rgb(255, 174, 0);
+}
+.card{
+  background-color: #212121;
+  border: none;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 80vh;
+  padding: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.carta {
+  background-color: #4b4b4b;
+  font-size: 2.3vh;
+  padding: 20px;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.59);  margin: 20px;
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  border: 1px solid #6b6b6b;
+}
+.footer{
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: auto;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.59);
+}
+
 .content {
   width: 100%;
   height: 80vh;
@@ -139,8 +186,23 @@ video::-webkit-media-controls {
   justify-content: center;
 }
 
+.active{
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+}
 
 
+.category{
+  color: white;
+  display: flex;
+  height: 100vh;
+  z-index: 1;
+  left:47%;
+  position: absolute;
+  align-items: end;
+  padding-bottom: 10px;
+  text-align: center;
+}
 
 .main-button {
   border: 1px solid transparent;
@@ -155,11 +217,28 @@ video::-webkit-media-controls {
   background-color: white;
   color: black;
 }
+
 a:link{
   text-decoration: none;
-}  
+}
+
 .hola {
   background-color: rgba(0, 0, 0, 0.404);
+}
+
+.mas{
+  height: auto;
+  width: 100%;
+  top: 30%;
+  background-color: #212121;
+  scroll-snap-align: start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-stop: always;
+}
+
+footer{
+  background-color: white;
 }
 
 
@@ -171,6 +250,19 @@ a:link{
   .img-h1 {   
     font-size: 6em;
   }
+  
+  
+  .card{
+    top: 5%;
+    margin-left: 7%;
+    color: white;
+  }
+
+  .carta{
+    width: 40%;
+  }
+
+  
 
   .img {
     display: flex;
@@ -178,6 +270,8 @@ a:link{
     overflow-x: auto;
     scroll-snap-type: none;
     scroll-snap-stop: always;
+    transition: 1.2s ease;
+
   }
 
   .img img {
@@ -185,23 +279,23 @@ a:link{
     flex-grow: 1;
     object-fit: cover;
     opacity: 0.8;
-    transition: 0.5s ease;
+    transition: 1.2s ease;
   }
 
   .img img:hover {
-    width: 500px;
+    width: 400px;
     opacity: 1;
     filter: contrast(120%);
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1115px) {
   .img-h1 {
    
     font-size: 10em;
 
   }
-
+ 
   .main {
     background-image: url(scn.JPEG);
     background-size: cover;
@@ -213,7 +307,6 @@ a:link{
   .main-button{
     padding: 10px 60px;
     margin-top: 25px;
-
   }
 
   
