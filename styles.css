@@ -265,7 +265,7 @@ a:link{
     overflow-x: auto;
     scroll-snap-type: none;
     scroll-snap-stop: always;
-    transition: 1.2s ease;
+    transition: 0.8s ease;
 
   }
 
