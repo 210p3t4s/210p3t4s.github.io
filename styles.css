@@ -313,11 +313,14 @@ a:link{
 }
 
  .offcanvas {
+  width: 50%;
         background-color: black;
         color: white;
       }
       
       .offcanvas-header {
+        display: flex;
+        justify-content: end;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       
