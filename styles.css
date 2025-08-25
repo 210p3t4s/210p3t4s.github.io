@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  color: white;
+  text-decoration: none;
+}
+
 
 .navbar a:link {
   font-size: 1em;
@@ -306,3 +311,59 @@ a:link{
 
   
 }
+
+ .offcanvas {
+        background-color: black;
+        color: white;
+      }
+      
+      .offcanvas-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .offcanvas-body .nav-link {
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .offcanvas-body .nav-link:hover {
+        color: #ccc;
+      }
+      
+      .dropdown-menu {
+        background-color: black;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .dropdown-item {
+        color: white;
+      }
+      
+      .dropdown-item:hover {
+        background-color: #333;
+        color: white;
+      }
+      
+      /* Estilos para los nuevos enlaces */
+      .top-links {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 10px;
+      }
+      
+      .top-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      
+      .top-links a:hover {
+        color: #ccc;
+      }
+      
+      .top-links .separator {
+        color: rgba(255, 255, 255, 0.5);
+      }
