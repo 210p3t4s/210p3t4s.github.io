@@ -1,423 +1,1403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Sumérgete en el mundo del arte corporal con nuestro estudio de tatuajes. Desde diseños innovadores hasta clásicos atemporales, 
-    ofrecemos una experiencia única y personalizada para expresar tu estilo y personalidad a través de la tinta. Descubre un espacio donde la creatividad se fusiona con la destreza artística,
-    y donde cada marca se convierte en una obra maestra única en su tipo. 
-    Bienvenido a nuestro universo de tatuajes: donde la imaginación se convierte en realidad sobre la piel."
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="hlvlogo2.png" />
-    <title>HuelvaTattoo</title>
+    <title>HLVTATTOO Academy - Formación Profesional en Tatuajes</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #1a1a1a;
+        --secondary-color: #ffffff;
+        --accent-color: #ff6b6b;
+        --text-gray: #666;
+        --light-gray: #f8f8f8;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      /* Scroll Snap Container */
+      .scroll-container {
+        height: 100vh;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .scroll-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Navigation - Mobile First */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(3, 3, 3, 0);
+        z-index: 1000;
+        padding: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+        text-decoration: none;
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: gray;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile Menu */
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(3, 3, 3, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-menu.active {
+        transform: translateX(0);
+      }
+
+      .mobile-menu a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 300;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Desktop Navigation - Hidden on Mobile */
+      .desktop-nav {
+        display: none;
+      }
+
+      /* Sections */
+      .section {
+        height: 100vh;
+        scroll-snap-align: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding: 1rem;
+      }
+
+      .img-h1 {
+        background: linear-gradient(
+          90deg,
+          rgb(208, 4, 4) 36%,
+          rgb(255, 208, 0) 96%
+        );
+        background-size: 100% auto;
+        -webkit-background-clip: text;
+        margin-top: 40px;
+        margin-bottom: 0;
+        background-clip: none;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5em;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.678)),
+          url("./room.jpeg") left/cover no-repeat;
+        color: var(--secondary-color);
+        text-align: center;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.5s forwards;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.7s forwards;
+      }
+
+      .hero-buttons {
+        
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cta-button {
+        background: linear-gradient(
+          90deg,
+          rgb(208, 4, 4) 36%,
+          rgb(255, 208, 0) 96%
+        );
+        color: var(--secondary-color);
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.9s forwards;
+        min-width: 150px;
+      }
+
+      .cta-button.secondary {
+        background: transparent;
+        border: 2px solid white;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+      }
+
+      .cta-button.secondary:hover {
+        background: white;
+        color: var(--primary-color);
+      }
+
+      /* Course Sections - Individual Cards */
+      .course-section {
+        background: var(--light-gray);
+        padding: 2rem 1rem;
+        text-align: center;
+        overflow-y: auto;
+      }
+
+      .course-content {
+        max-height: 100%;
+        overflow-x: visible;
+        overflow-y: visible;
+        width: 100%;
+      }
+
+      .course-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+        line-height: 1.2;
+      }
+
+      .course-grid {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 70vh;
+        width: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+      }
+
+      .course-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .course-card {
+        background: var(--secondary-color);
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid transparent;
+        min-width: 280px;
+        max-width: 280px;
+        flex-shrink: 0;
+        flex-basis: 280px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .course-card h3 {
+        font-size: 1.3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        border-color: var(--accent-color);
+      }
+
+      .course-details {
+        text-align: center;
+        margin: 1rem 0;
+        color: var(--text-gray);
+        font-size: 0.9rem;
+        flex-grow: 1;
+      }
+
+      .course-price {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--accent-color);
+      }
+
+      .course-features {
+        list-style: none;
+        text-align: left;
+        margin: 1.5rem 0;
+        flex-grow: 1;
+      }
+
+      .course-features li {
+        padding: 0.75rem 0;
+        color: var(--text-gray);
+        position: relative;
+        padding-left: 2rem;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .course-features li:last-child {
+        border-bottom: none;
+      }
+
+      .course-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .course-button {
+        margin-top: auto;
+      }
+
+      /* About Section */
+      .about {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        text-align: center;
+        padding: 2vh;
+        display: flex;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .about-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      .about-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        text-align: left;
+      }
+
+      /* Competencies Section - Mobile First */
+      .competencies {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        width: 100%;
+      }
+
+      .competencies::-webkit-scrollbar {
+        display: none;
+      }
+
+      .competency {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        text-align: left;
+        min-width: 280px;
+        max-width: 280px;
+        flex-shrink: 0;
+        flex-basis: 280px;
+      }
+
+      .competency h4 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .competency p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* Additional Courses Section */
+      .additional-courses {
+        background: var(--light-gray);
+        color: var(--primary-color);
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .additional-courses-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .additional-courses h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      /* Course List Section - Mobile First */
+      .course-list {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        width: 100%;
+      }
+
+      .course-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .course-item {
+        background: var(--secondary-color);
+        padding: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        border-left: 4px solid var(--accent-color);
+        min-width: 280px;
+        max-width: 280px;
+        flex-shrink: 0;
+        flex-basis: 280px;
+      }
+
+      .course-item h3 {
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .course-item p {
+        color: var(--text-gray);
+        line-height: 1.5;
+      }
+
+      /* Contact Section */
+      .contact {
+        background: var(--light-gray);
+        padding: 2rem 1rem;
+      }
+
+      .contact-content {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .contact-content > p {
+        margin-bottom: 2rem;
+        color: var(--text-gray);
+        font-size: 0.9rem;
+      }
+
+      .contact-form {
+        background: var(--secondary-color);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+
+      /* Footer Styles */
+      .footer {
+        background: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 3rem 1rem 1rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem 0;
+        width: 100%;
+      }
+
+      .footer-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .footer-section {
+        min-width: 200px;
+        max-width: 200px;
+        flex-shrink: 0;
+        flex-basis: 200px;
+      }
+
+      .footer-section h3 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .footer-section a:hover {
+        color: var(--accent-color);
+        transition: color 0.3s ease;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: var(--text-gray);
+      }
+
+      /* Scroll Indicator - Hidden on Mobile */
+      .scroll-indicator {
+        display: none;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Tablet Styles */
+      @media (min-width: 768px) {
+        .hero-content h1 {
+          font-size: 3rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.8rem;
+        }
+
+        .course-content,
+        .about-content,
+        .contact-content,
+        .additional-courses-content {
+          max-width: 700px;
+        }
+
+        .course-content h2,
+        .about-content h2,
+        .contact-content h2,
+        .additional-courses h2 {
+          font-size: 2.5rem;
+        }
+
+        .competencies {
+          display: flex;
+          flex-direction: row;
+          gap: 1.5rem;
+          margin-top: 2rem;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          padding: 1rem 0;
+          width: 100%;
+        }
+
+        .course-list {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+
+        .desktop-nav {
+          display: flex;
+          list-style: none;
+          gap: 2rem;
+        }
+
+        .desktop-nav a {
+          color: var(--secondary-color);
+          text-decoration: none;
+          transition: color 0.3s ease;
+          cursor: pointer;
+        }
+
+        .desktop-nav a:hover {
+          color: var(--accent-color);
+        }
+      }
+
+      /* Desktop Styles */
+      @media (min-width: 1024px) {
+        .navbar {
+          padding: 1rem 2rem;
+        }
+
+        .logo {
+          font-size: 1.5rem;
+        }
+
+        .hero-content h1 {
+          font-size: 4rem;
+        }
+
+        .course-content,
+        .about-content,
+        .contact-content,
+        .additional-courses-content {
+          max-width: 1200px;
+        }
+
+        .course-content h2,
+        .about-content h2,
+        .contact-content h2,
+        .additional-courses h2 {
+          font-size: 3rem;
+        }
+
+        .course-grid {
+          justify-content: center;
+          flex-wrap: wrap;
+          overflow-x: visible;
+          overflow-y: visible;
+          padding: 3rem 1rem;
+          min-height: auto;
+          gap: 2rem;
+          max-width: 100%;
+        }
+
+        .course-card {
+          min-width: 280px;
+          max-width: 300px;
+          min-height: 500px;
+          flex: 0 1 calc(33.333% - 2rem);
+          margin-bottom: 2rem;
+        }
+
+        .competencies {
+          justify-content: center;
+          flex-wrap: wrap;
+          overflow-x: visible;
+          overflow-y: visible;
+          padding: 3rem 1rem;
+          min-height: auto;
+          gap: 2rem;
+        }
+
+        .course-list {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .scroll-indicator {
+          display: block;
+          position: fixed;
+          right: 2rem;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 100;
+        }
+
+        .scroll-dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.5);
+          margin: 1rem 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .scroll-dot.active {
+          background: var(--accent-color);
+          transform: scale(1.2);
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* Large Desktop */
+      @media (min-width: 1440px) {
+        .course-content,
+        .about-content,
+        .contact-content,
+        .additional-courses-content {
+          max-width: 1400px;
+        }
+
+        .course-grid {
+          justify-content: center;
+          gap: 2.5rem;
+          padding: 4rem 2rem;
+        }
+
+        .course-card {
+          min-width: 320px;
+          max-width: 350px;
+          flex: 0 1 calc(25% - 2.5rem);
+        }
+
+        .footer {
+          padding: 4rem 2rem 2rem;
+        }
+      }
+    </style>
   </head>
-  <body style="background-color:black;">
-    <div class="container-fluid main" id="main">
-      <div class="row">
-        <nav class="navbar navbar-dark fixed-top">
-          <div
-            class="container-fluid d-flex align-items-center justify-content-between"
-          >
-            <a class="navbar-brand" href="#main"
-              ><img
-                src="hlvlogo2.png"
-                style="width: 12vh; height: 10vh"
-                alt="huelva tattoo"
-                srcset="huelva tattoo"
-            /></a>
-            <section class="util d-none d-md-flex">
-              <a href="#tattoo">SESIONES</a>
-              <a href="#piercings">PIERCINGS</a>
-              <a href="#mediano">MEDIANOS</a>
-              <a  href="#mTattoo">MINITATTOO</a>
-              <a href="#reseñas">RESEÑAS</a>
-            </section>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-content">
+        <a onclick="scrollToSection(0);" class="logo">
+          <img
+            src="hlvlogo2.png"
+            alt="HLVTATTOO Academy"
+            style="height: 70px"
+          />
+        </a>
 
-          </nav>
-        </div>
-        <!-- Menú offcanvas para móviles -->
-      <div class="text-light offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <!-- <div class="offcanvas-header">
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div> -->
-          <div class="offcanvas-body">
-            <div class="top-links-mobile mb-4">
-
-              <a href="sesiones.jpeg" download="sesiones.jpeg" class="d-block py-2">PRECIO SESIONES</a>
-              <a href="piercings.jpeg" download="piercings.jpeg" class="d-block py-2">PRECIO PIERCINGS</a>
-              <a href="./curso.html"class="d-block py-2">CURSO</a>
-              
-            </div>
-            
-            <hr>
-            
-            <ul class="d-md-none navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link" href="#tattoo">SESIONES</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#piercings">PIERCINGS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mediano">MEDIANOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#mTattoo">MINITATTOO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#reseñas">RESEÑAS</a>
-              </li>
-              <li class="nav-item">
-                 <a href="#footer"  class="nav-link">UBICACIÓN</a>
-              </li>
-            </ul>
-          </div>
-
-          <hr>
-          
-
-        </div>
-      <div class="row">
-        <div class="col d-flex align-items-center content text-white">
-          <h1 class="img-h1">HLVTATTOO</h1>
-        </div>
-        <div class="col-12 text-center">
-          <a
-            href="https://wa.me/34611601309?text=Te escribía interesado para concertar una cita para un tattoo"
-          >
-            <button class="main-button">Tattoos</button>
-          </a>
-          <a
-            href="https://wa.me/34611601309?text=Te escribía interesado para concertar una cita para un Piercing"
-          >
-            <button class="main-button">Piercings</button>
-          </a>
+        <!-- Mobile Hamburger -->
+        <div class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-    </div>
-    <div class="container-fluid img d-flex" id="tattoo">
-      <img src="tigre.png" alt="" srcset="" />
-      <img src="backDragon.png" alt="" srcset="" />
-      <img src="pooker.png" alt="" srcset="" />
-      <img src="dragonOrn.png" alt="" srcset="" />
-      <img src="paloma.JPEG" alt="" srcset="" />
-      <img src="flores.jpg" alt="" srcset="" />
-      <img src="buho.png" alt="" srcset="" />
-      <img src="dragonCoc.png" alt="" srcset="" /> 
-      <img src="tigerClock.JPEG" alt="" srcset="" />
-      <img src="hannya.png" alt="" srcset="" />
-      <img src="poseidon.png" alt="" srcset="" />
-    </div>
+    </nav>
 
-    <div class="container-fluid img d-flex" id="piercings">
-      <img src="septum.png" alt="" srcset="" />
-      <img src="ombligo.png" alt="" srcset="" />
-      <img src="nariz.png" alt="" srcset="" />
-      <img src="oreja.png" alt="" srcset="" />
-      <img src="pezon.png" alt="" srcset="" />
-    </div>
-
-    <div class="container-fluid img d-flex" id="mediano">
-      <img src="katana.png" alt="" srcset="" />
-      <img src="brain.png" alt="" srcset="" />
-      <img src="donald.png" alt="" srcset="" />
-      <img src="cora.png" alt="" srcset="" />
-      <img src="world.png" alt="" srcset="" />
-      <img src="conch.png" alt="" srcset="" />
-      <img src="baby.png" alt="" srcset="" />
-      <img src="estrella.png" alt="" srcset="" />
-      <img src="rostro.png" alt="" srcset="" />
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a onclick="scrollToSection(0); toggleMenu()">Inicio</a>
+      <!-- <a onclick="scrollToSection(1); toggleMenu()">Sobre Nosotros</a> -->
+      <a onclick="scrollToSection(1); toggleMenu()">Cursos</a>
+      <a onclick="scrollToSection(3); toggleMenu()">Más Cursos</a>
+      <!-- <a onclick="scrollToSection(4); toggleMenu()">Contacto</a> -->
+      <a href="index.html">HLVTATTOO</a>
+      <div
+        style="
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+        "
+      >
+        <img
+          src="./junta.jpeg"
+          alt="Andalucía"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+        <img
+          src="./verde.jpeg"
+          alt="España"
+          style="width: 220px; margin: 0 0.5rem"
+        />
+      </div>
     </div>
 
-    <div class="container-fluid img d-flex" id="mTattoo">
-      <img src="rayo.JPG" alt="" srcset="" />
-      <img src="sacrificio.JPG" alt="" srcset="" />
-      <img src="h20.JPG" alt="" srcset="" />
-      <img src="letters.JPG" alt="" srcset="" />
-      <img src="cat.JPG" alt="" srcset="" />
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot active" onclick="scrollToSection(0)"></div>
+      <div class="scroll-dot" onclick="scrollToSection(1)"></div>
+      <div class="scroll-dot" onclick="scrollToSection(2)"></div>
+      <div class="scroll-dot" onclick="scrollToSection(3)"></div>
+      <div class="scroll-dot" onclick="scrollToSection(4)"></div>
     </div>
 
-    <div class="mas container-fluid img d-flex" id="reseñas">
-      <div class="row">
-      <section class="reseña col-12 d-flex">
-        <div class="card">
-          <div class="row row-md-6">
-          <form class="carta">
-            <div class="row-3 ">
-              <h2>Carmen Rodríguez</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>Un verdadero placer haberme puesto en sus manos, me ha aconsejado en todo momento y me ha ayudado a darle forma a mi idea.
-                Totalmente encantada con el trato y con el resultado, repito seguro!
-                Animo a todo el que tenga duda a que venga porque con seguridad, se irá encantad@.          </p>
-            </div>
-          </form>
-          <form class="carta">
-            <div class="row-3">
-              <h2>Jen</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>Encantada tanto con el trato como con el trabajo.
-                Andrés es un encanto y te guía y aconseja en todo momento, hace que estés muy cómoda durante el proceso.
-                Repetiré!
-              </p>
-            </div>
-          </form>
-          <form class="carta">
-            <div class="row-3">
-              <h2>Juan Antonio Escobar Pérez</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion d-flex ">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>Estoy encantado, el tatuador es insuperable, un gran artista y buen asesor, transmite mucha seguridad y confianza. Recomendable 100%
-              </p>
-            </div>
-          </form>
-          <form class="carta">
-            <div class="row-3">
-              <h2>Rocío Alonso</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion d-flex ">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>
-                Me encantó el tatuaje que me hice,el trato de 10 y muy buen profesional Andrés,seguro repetiré con algún que otro más. Lo recomiendo
-              </p>
-            </div>
-          </form>
-        
-        </div>
-        <div class="row row-md-6">
-          <form class="carta">
-            <div class="row-3 ">
-              <h2>Juan</h2>
-            </div>
-            <div class="row d-flex">
-              <p class="clasificacion">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>Un trabajo excelente, rápido, amable y limpio. Personalmente por 
-                los nervios estuve con una bajada de tensión y Andrés, quien fue el que 
-                me lo hizo, estuvo constantemente atendiéndome y preocupándose por mi estado. 
-                También cabe resaltar, que es una persona maravillosa que se nota que entiende
-                slo que hace y te da toda la información necesaria para quitarte el miedo y/o 
-                 explicarte cómo puede quedar mejor.        
-              </p>
-            </div>
-          </form>
-          <form class="carta">
-            <div class="row-3">
-              <h2>LorenaDF</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>Me he tatuado con Andrés, ya es la segunda vez este año y estoy muy contenta, 
-                buen profesional y aconseja muy bien antes de empezar a tatuar. Volveré a repetir seguro! Mil gracias! 😊
-              </p>
-            </div>
-          </form>
-          <form class="carta">
-            <div class="row-3">
-              <h2>Sandra Styles</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion d-flex ">
-                <input id="radio1" type="radio" name="estrellas" style value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>Super encantada con el servicio y con mi piercing de Anti-Helix que me ha echó Andres súper educado y muy buena persona y todo muy esterilizado y muy limpio en el estudio, Y no me dolio mi piercing fue super ligero!!❤️</p>
-            </div>
-          </form>
-          <form class="carta">
-            <div class="row-3">
-              <h2>Fran León</h2>
-            </div>
-            <div class="row">
-              <p class="clasificacion d-flex ">
-                <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                --><label for="radio1">★</label><!--
-                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                --><label for="radio2">★</label><!--
-                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                --><label for="radio3">★</label><!--
-                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                --><label for="radio4">★</label><!--
-                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                --><label for="radio5">★</label>
-              </p>
-            </div>
-            <div class="row">
-              <p>
-                El estudio de tatuaje es increíble, tal y como entras se nota un ambiente súper acogedor y la profesionalidad del tatuador está a otro nivel, te aconseja muy bien tanto en los propios tattos como en los productos para los cuidados de los mismos, 100% recomendado              </p>
-            </div>
-          </form>
-        </div>
-
+    <!-- Main Content -->
+    <div class="scroll-container">
+      <!-- Hero Section -->
+      <section class="section hero">
+        <div class="hero-content">
+          <h1 class="img-h1" style="line-height: 1">HLVTATTOO</h1>
+          <h2 class="hero-subtitle" style="line-height: 1; ">ACADEMY</h2>
+          <p class="hero-subtitle">
+            Formación profesional en tatuajes con certificación oficial
+          </p>
+          <div class="hero-buttons">
+            <a href="#" class="cta-button" onclick="scrollToSection(1)"
+              >Ver Cursos</a
+            >
+            <a
+              href="https://wa.me/34611601309?text=Te escribía interesado para concertar una cita para un Piercing"
+              class="cta-button secondary"
+              >Contactar</a
+            >
+          </div>
+          
       </section>
-    
-      <footer class="col-12 d-flex" >
-        <div class="container-fluid footer" id="footer">
-          <footer style="background-color: #212122;">
-          <div class="container p-4">
-            <div class="row">
-              <div class="col-lg-6 col-md-12 text-center">
-                <h5 class="mb-3" style="letter-spacing: 2px; color: white;">Ubicación</h5>
-                <p>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3175.37720422079!2d-6.954507924955751!3d37.26248147211889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd11d10a080f7681%3A0xf217658b2048aff!2sHuelva%20Tattoo%20-%20Estudio%20de%20tatuaje%20y%20piercing%20Huelva!5e0!3m2!1ses!2ses!4v1713114619966!5m2!1ses!2ses" width="90%" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+      <!-- About Section -->
+
+      <!-- Courses Section -->
+      <section class="section course-section">
+        <div class="course-content" style="padding-top: 5rem">
+          <h2 class="fade-in">Nuestros Cursos</h2>
+          <div class="course-grid">
+            <div class="course-card fade-in">
+              <h3>Auxiliar de Tatuaje</h3>
+              <div class="course-details">
+                <p><strong>Duración:</strong> 120 horas</p>
+                <p>
+                  <strong>Online:</strong> 90h |
+                  <strong>Presencial:</strong> 30h
+                </p>
+                <p>
+                  <strong>Requisitos:</strong> El alumno debe traer su propia
+                  máquina de tatuar
+                </p>
+                <p>
+                  <strong>Estudios requeridos:</strong> No se requieren estudios
+                  previos
                 </p>
               </div>
-              <div class="col-lg-3 col-md-5 mb-4 text-center">
-                <h5 class="mb-4 " style="letter-spacing: 2px; color: white;">Redes Sociales</h5>
-                <ul class="list-unstyled mb-0 justify-conteZ">
-                  <li class="mb-1">
-                    <a href="https://www.instagram.com/huelvatattoo?igsh=c28xbjRjZjRhcXBm" style="color: white;">HuelvaTattoo</a>
-                  </li>
-                  <li class="mb-1">
-                    <a href="https://www.instagram.com/huelvamtattoo?igsh=MTk1Z2Z5NGwxNHNsNg==" style="color: white;">HuelvaMTattoo</a>
-                  </li>
-                  <li class="mb-1">
-                    <a href="tel:611 601 309" styles="color: white;">611 601 309</a>
-                  </li>
-                 
-                </ul>
+              <div class="course-price">750€</div>
+              <ul class="course-features">
+                <li>Apuntes teóricos incluidos</li>
+                <li>
+                  Material necesario para prácticas de tatuaje en el centro
+                </li>
+                <li>Aula y espacios necesarios</li>
+                <li>Camiseta del curso</li>
+                <li>Diploma al terminar el curso</li>
+              </ul>
+            </div>
+
+            <div class="course-card fade-in">
+              <h3>Auxiliar + Higiénico Sanitario</h3>
+              <div class="course-details">
+                <p><strong>Duración:</strong> 210 horas</p>
+                <p>
+                  <strong>Online:</strong> 90h |
+                  <strong>Presencial:</strong> 30h
+                </p>
+                <p><strong>Sanitario:</strong> 90h adicionales</p>
+                <p>
+                  <strong>Requisitos:</strong> El alumno debe traer su propia
+                  máquina de tatuar
+                </p>
+                <p>
+                  <strong>Estudios requeridos:</strong> No se requieren estudios
+                  previos
+                </p>
               </div>
-              <div class="col-lg-3 col-md-7 mb-4 text-center">
-                <h5 class="mb-4 text-center" style="letter-spacing: 2px; color: white;">HORARIO</h5>
-                <table class="table" style="color: white; border-color: #666;">
-                  <tbody>
-                    <tr>
-                      <td>Mañana</td>
-                      <td> 10:00–14:00</td>
-                    </tr>
-                    <tr>
-                      <td>Tarde</td>
-                      <td>17:30–20:30</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="course-price">1100€</div>
+              <ul class="course-features">
+                <li>Todo lo del curso básico</li>
+                <li>Certificación higiénico-sanitaria</li>
+                <li>Prevención de riesgos biológicos</li>
+                <li>Gestión de residuos sanitarios</li>
+                <li>Doble diploma</li>
+              </ul>
+            </div>
+
+            <div class="course-card fade-in">
+              <h3>Higiénico Sanitario</h3>
+              <div class="course-details">
+                <p><strong>Duración:</strong> 90 horas</p>
+                <p><strong>Modalidad:</strong> MF_0064</p>
+                <p>
+                  <strong>Estudios requeridos:</strong> No se requieren estudios
+                  previos
+                </p>
               </div>
+              <div class="course-price">390€</div>
+              <ul class="course-features">
+                <li>Apuntes teóricos completos</li>
+                <li>Aula especializada</li>
+                <li>Certificación oficial</li>
+                <li>Prevención de riesgos</li>
+                <li>Normativa sanitaria</li>
+              </ul>
             </div>
           </div>
-         
-  
-        </footer>
-        
-      </div>
-      </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+        </div>
+      </section>
 
-    
+      <!-- Additional Courses Section -->
+      <section
+        class="section additional-courses"
+        style="background: var(--primary-color); color: white"
+      >
+        <div class="course-content">
+          <h2 class="fade-in" style="color: white">
+            ¿Qué es un aprendiz de tatuador?
+          </h2>
+          <p class="about-text fade-in">
+            Un aprendiz de tatuador es alguien que está comenzando su camino en
+            el arte del tatuaje. Normalmente, un aprendiz observa y asiste a un
+            tatuador experimentado (maestro) para aprender las habilidades
+            necesarias.
+          </p>
+          <p class="about-text fade-in">
+            Durante el aprendizaje, la persona no solo practica el dibujo y la
+            técnica del tatuaje, sino que también aprende: higiene y seguridad,
+            conocimiento de la piel, diseño y arte, manejo del equipo y trato
+            con clientes.
+          </p>
+          <p class="about-text fade-in">
+            En la mayoría de los casos, un aprendiz pasa meses o incluso años en
+            esta etapa antes de poder tatuar libremente a clientes de forma
+            profesional.
+          </p>
+          <div class="competencies">
+            <!-- COMPETENCIAS TÉCNICAS -->
+            <div class="competency fade-in">
+              <h4>Competencias Técnicas</h4>
+              <p>
+                Conocimiento básico de higiene, bioseguridad y esterilización de
+                materiales.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Manejo inicial de la máquina de tatuar (configuración, montaje y
+                limpieza).
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Preparación de la piel del cliente (rasurado, desinfección y
+                aplicación de stencil).
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Selección y uso adecuado de agujas, tintas y fuentes de poder.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Control básico de línea, sombreado y relleno en prácticas sobre
+                piel sintética o fruta.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Conocimiento de primeros auxilios básicos ante reacciones o
+                complicaciones menores.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Prevención de riesgos biológicos e identificación de agentes
+                infecciosos.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Aplicación de protocolos de asepsia, antisepsia y desinfección.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Manejo seguro del material y equipos, minimizando riesgo de
+                contaminación cruzada.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Uso adecuado de equipos de protección individual (EPI).</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Gestión correcta de residuos sanitarios según normativa.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Actuación en situaciones de emergencia y exposiciones
+                accidentales.
+              </p>
+            </div>
+
+            <!-- COMPETENCIAS ARTÍSTICAS -->
+            <div class="competency fade-in">
+              <h4>Competencias Artísticas</h4>
+              <p>Desarrollo de la observación y dibujo a mano alzada.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Manejo de diseño digital y programas básicos de ilustración para
+                tatuajes.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Nociones de composición, proporción, sombreado y color.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Capacidad para adaptar un diseño a las características de la
+                piel y zona del cuerpo.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Creatividad para proponer variaciones y personalizaciones en los
+                diseños.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Estudio de diferentes estilos de tatuaje (tradicional, realismo,
+                geométrico, etc.).
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Desarrollo de un portfolio artístico personal.</p>
+            </div>
+
+            <!-- COMPETENCIAS PERSONALES Y PROFESIONALES -->
+            <div class="competency fade-in">
+              <h4>Competencias Personales y Profesionales</h4>
+              <p>
+                Comunicación efectiva con el cliente (saber escuchar y explicar
+                el proceso).
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Paciencia y concentración durante la práctica y ejecución.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Responsabilidad con el cumplimiento de normas de bioseguridad.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Capacidad de trabajar bajo supervisión y aceptar
+                retroalimentación.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Ética profesional: respeto al cliente, confidencialidad y
+                rechazo a prácticas inseguras.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Gestión del tiempo y disciplina en la práctica constante.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Atención al cliente desde la perspectiva sanitaria y estética.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Capacidad para detectar situaciones de riesgo y actuar en
+                consecuencia.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Desarrollo de habilidades de venta y presentación de servicios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section additional-courses">
+        <div class="course-content">
+          <h2 class="fade-in">Más Cursos Especializados</h2>
+          <div class="course-list">
+            <div class="course-item fade-in">
+              <h3>Curso Especializado con Prácticas Remuneradas</h3>
+              <p>
+                Formación completa con experiencia laboral real en estudios
+                asociados.
+              </p>
+            </div>
+            <div class="course-item fade-in">
+              <h3>Anillador</h3>
+              <p>
+                Especialízate en la técnica del anillado para piercings y
+                modificaciones corporales.
+              </p>
+            </div>
+            <div class="course-item fade-in">
+              <h3>Anillador + Higiénico Sanitario Oficial</h3>
+              <p>
+                Doble certificación para ejercer como anillador profesional con
+                todas las garantías sanitarias.
+              </p>
+            </div>
+            <div class="course-item fade-in">
+              <h3>Técnico de Tatuaje</h3>
+              <p>
+                Formación avanzada para tatuadores que buscan perfeccionar su
+                técnica y estilo.
+              </p>
+            </div>
+            <div class="course-item fade-in">
+              <h3>Auxiliar Administrativo para Estudios de Tatuajes</h3>
+              <p>
+                Gestión y administración especializada para estudios de tatuaje
+                y piercing.
+              </p>
+            </div>
+          </div>
+          <div style="margin-top: 3rem">
+            <a href="#" class="cta-button" onclick="scrollToSection(4)"
+              >Solicitar Información</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <div
+        style="
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+        "
+      >
+        <img
+          src="./junta.jpeg"
+          alt="Andalucía"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+        <img
+          src="./verde.jpeg"
+          alt="España"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+      </div>
+
+    <script>
+      // Mobile menu toggle
+      function toggleMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        mobileMenu.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      }
+
+      // Scroll snap navigation
+      const sections = document.querySelectorAll(".section");
+      const scrollContainer = document.querySelector(".scroll-container");
+      const scrollDots = document.querySelectorAll(".scroll-dot");
+
+      function scrollToSection(index) {
+        const targetSection = sections[index];
+        const containerTop = scrollContainer.scrollTop;
+        const targetTop = targetSection.offsetTop;
+
+        scrollContainer.scrollTo({
+          top: targetTop,
+          behavior: "smooth",
+        });
+      }
+
+      // Update active dot on scroll (desktop only)
+      function updateActiveDot() {
+        if (window.innerWidth >= 1024) {
+          const scrollTop = scrollContainer.scrollTop;
+          const windowHeight = window.innerHeight;
+
+          sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (
+              scrollTop >= sectionTop - windowHeight / 2 &&
+              scrollTop < sectionBottom - windowHeight / 2
+            ) {
+              scrollDots.forEach((dot) => dot.classList.remove("active"));
+              if (scrollDots[index]) {
+                scrollDots[index].classList.add("active");
+              }
+            }
+          });
+        }
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all fade-in elements
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Event listeners
+      scrollContainer.addEventListener("scroll", updateActiveDot);
+
+      // Form submission
+      document.querySelector("form")?.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const course = formData.get("course");
+        const name = formData.get("name");
+
+        alert(
+          `¡Gracias ${name}! Hemos recibido tu consulta sobre "${course}". Te contactaremos muy pronto.`
+        );
+
+        // Reset form
+        this.reset();
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (e) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+
+      // Initialize
+      updateActiveDot();
+
+      // Handle window resize
+      window.addEventListener("resize", updateActiveDot);
+    </script>
   </body>
 </html>
