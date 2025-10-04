@@ -143,7 +143,7 @@
         overflow: hidden;
         padding: 1rem;
       }
-      
+
       .img-h1 {
         background: linear-gradient(
           90deg,
@@ -153,6 +153,7 @@
         background-size: 100% auto;
         -webkit-background-clip: text;
         margin-top: 40px;
+        margin-bottom: 0;
         background-clip: none;
         -webkit-text-fill-color: transparent;
         font-size: 3.5em;
@@ -160,11 +161,12 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.678)), url("./room.jpeg") left/cover no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.678)),
+          url("./room.jpeg") left/cover no-repeat;
         color: var(--secondary-color);
         text-align: center;
       }
-      
+
       .hero-content {
         display: flex;
         flex-direction: column;
@@ -182,15 +184,16 @@
         animation: fadeInUp 1s ease 0.5s forwards;
         line-height: 1.2;
       }
-      
+
       .hero-subtitle {
         font-size: 1.5rem;
         margin-bottom: 2rem;
         opacity: 0;
         animation: fadeInUp 1s ease 0.7s forwards;
       }
-      
+
       .hero-buttons {
+        
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
@@ -198,7 +201,11 @@
       }
 
       .cta-button {
-        background: var(--accent-color);
+        background: linear-gradient(
+          90deg,
+          rgb(208, 4, 4) 36%,
+          rgb(255, 208, 0) 96%
+        );
         color: var(--secondary-color);
         padding: 1rem 2rem;
         border: none;
@@ -212,19 +219,20 @@
         animation: fadeInUp 1s ease 0.9s forwards;
         min-width: 150px;
       }
-      
+
       .cta-button.secondary {
         background: transparent;
-        border: 2px solid var(--accent-color);
+        border: 2px solid white;
       }
 
       .cta-button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
       }
-      
+
       .cta-button.secondary:hover {
-        background: var(--accent-color);
+        background: white;
+        color: var(--primary-color);
       }
 
       /* Course Sections - Individual Cards */
@@ -236,6 +244,7 @@
       }
 
       .course-content {
+        padding-top: 6vh ;
         max-height: 100%;
         overflow-x: visible;
         overflow-y: visible;
@@ -255,7 +264,7 @@
         margin-top: 1rem;
         overflow-x: auto;
         overflow-y: hidden;
-        height: 60vh;
+        height: 70vh;
         width: 100%;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -301,21 +310,19 @@
         margin: 1rem 0;
         color: var(--text-gray);
         font-size: 0.9rem;
-        flex-grow: 1;
+        padding: 1vh;
       }
 
       .course-price {
         font-size: 2.5rem;
         font-weight: bold;
         color: var(--accent-color);
-        margin: 1rem 0;
       }
 
       .course-features {
         list-style: none;
         text-align: left;
         margin: 1.5rem 0;
-        flex-grow: 1;
       }
 
       .course-features li {
@@ -326,7 +333,7 @@
         font-size: 0.9rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       }
-      
+
       .course-features li:last-child {
         border-bottom: none;
       }
@@ -339,7 +346,7 @@
         font-weight: bold;
         font-size: 1.2rem;
       }
-      
+
       .course-button {
         margin-top: auto;
       }
@@ -421,18 +428,18 @@
         padding: 2rem 1rem;
         text-align: center;
       }
-      
+
       .additional-courses-content {
         max-width: 800px;
         margin: 0 auto;
       }
-      
+
       .additional-courses h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
         line-height: 1.2;
       }
-      
+
       /* Course List Section - Mobile First */
       .course-list {
         display: flex;
@@ -465,13 +472,13 @@
         flex-shrink: 0;
         flex-basis: 280px;
       }
-      
+
       .course-item h3 {
         color: var(--accent-color);
         margin-bottom: 0.5rem;
         font-size: 1.2rem;
       }
-      
+
       .course-item p {
         color: var(--text-gray);
         line-height: 1.5;
@@ -579,11 +586,11 @@
         flex-basis: 200px;
       }
 
-        .footer-section h3 {
-          color: var(--accent-color);
-          margin-bottom: 1rem;
-          font-size: 1.2rem;
-        }
+      .footer-section h3 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
 
       .footer-section p,
       .footer-section a {
@@ -665,7 +672,7 @@
         .hero-content h1 {
           font-size: 3rem;
         }
-        
+
         .hero-subtitle {
           font-size: 1.8rem;
         }
@@ -686,19 +693,19 @@
 
         .competencies {
           display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        padding: 1rem 0;
-        width: 100%;
+          flex-direction: row;
+          gap: 1.5rem;
+          margin-top: 2rem;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          padding: 1rem 0;
+          width: 100%;
         }
-        
+
         .course-list {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -768,7 +775,7 @@
           min-height: 500px;
           flex: 0 1 calc(33.333% - 2rem);
           margin-bottom: 2rem;
-        } 
+        }
 
         .competencies {
           justify-content: center;
@@ -779,7 +786,7 @@
           min-height: auto;
           gap: 2rem;
         }
-        
+
         .course-list {
           grid-template-columns: repeat(3, 1fr);
         }
@@ -807,7 +814,7 @@
           background: var(--accent-color);
           transform: scale(1.2);
         }
-        
+
         .footer-grid {
           grid-template-columns: repeat(4, 1fr);
         }
@@ -844,8 +851,12 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-content">
-        <a  onclick="scrollToSection(0);" class="logo"> 
-          <img src="hlvlogo2.png" alt="HLVTATTOO Academy" style="height: 70px" />
+        <a onclick="scrollToSection(0);" class="logo">
+          <img
+            src="hlvlogo2.png"
+            alt="HLVTATTOO Academy"
+            style="height: 70px"
+          />
         </a>
 
         <!-- Mobile Hamburger -->
@@ -854,8 +865,6 @@
           <span></span>
           <span></span>
         </div>
-        
-        
       </div>
     </nav>
 
@@ -867,6 +876,28 @@
       <a onclick="scrollToSection(3); toggleMenu()">Más Cursos</a>
       <!-- <a onclick="scrollToSection(4); toggleMenu()">Contacto</a> -->
       <a href="index.html">HLVTATTOO</a>
+      <div
+        style="
+          position: absolute;
+          padding: 1vh;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+        "
+      >
+        <img
+          src="./junta.jpeg"
+          alt="Andalucía"
+          style="width: 180px; margin: 0 0.5rem"
+        />
+        <img
+          src="./verde.jpeg"
+          alt="España"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+      </div>
     </div>
 
     <!-- Scroll Indicator -->
@@ -883,54 +914,103 @@
       <!-- Hero Section -->
       <section class="section hero">
         <div class="hero-content">
-          <h1 class="img-h1">HLVTATTOO</h1>
-          <h2 class="hero-subtitle">ACADEMY</h2>
-          <p class="hero-subtitle">Formación profesional en tatuajes con certificación oficial</p>
+          <h1 class="img-h1" style="line-height: 1">HLVTATTOO</h1>
+          <h2 class="hero-subtitle" style="line-height: 1; ">ACADEMY</h2>
+          <p class="hero-subtitle">
+            Formación profesional en tatuajes con certificación oficial
+          </p>
           <div class="hero-buttons">
-            <a href="#" class="cta-button" onclick="scrollToSection(1)">Ver Cursos</a>
-            <a href="https://wa.me/34611601309?text=Te escribía interesado para concertar una cita para un Piercing" class="cta-button secondary ">Contactar</a>
+            <a href="#" class="cta-button" onclick="scrollToSection(1)"
+              >Ver Cursos</a
+            >
+            <a
+              href="https://wa.me/34611601309?text=Te escribía para solicitar información sobre el curso de tatuaje"
+              class="cta-button secondary"
+              >Contactar</a
+            >
           </div>
-        </div>
+          <div
+        style="
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+        "
+      >
+        <img
+          src="./junta.jpeg"
+          alt="Andalucía"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+        <img
+          src="./verde.jpeg"
+          alt="España"
+          style="width: 220px; margin: 0 0.5rem"
+        />
+      </div>
+    </div>
+          
       </section>
 
       <!-- About Section -->
-     
+
       <!-- Courses Section -->
       <section class="section course-section">
-        <div class="course-content">
-          <h2 class="fade-in">Nuestros Cursos Principales</h2>
+        <div class="course-content" style="padding-top: 5rem">
+          <h2 class="fade-in">Nuestros Cursos</h2>
           <div class="course-grid">
             <div class="course-card fade-in">
               <h3>Auxiliar de Tatuaje</h3>
+                            <div class="course-price">750€</div>
+
               <div class="course-details">
                 <p><strong>Duración:</strong> 120 horas</p>
-                <p><strong>Online:</strong> 90h | <strong>Presencial:</strong> 30h</p>
-                <p><strong>Requisitos:</strong> El alumno debe traer su propia máquina de tatuar</p>
-                <p><strong>Estudios requeridos:</strong> No se requieren estudios previos</p>
+                <p>
+                  <strong>Online:</strong> 90h |
+                  <strong>Presencial:</strong> 30h
+                </p>
+                <!-- <p>
+                  <strong>Requisitos:</strong> El alumno debe traer su propia
+                  máquina de tatuar
+                </p>
+                <p>
+                  <strong>Estudios requeridos:</strong> No se requieren estudios
+                  previos
+                </p> -->
               </div>
-              <div class="course-price">750€</div>
               <ul class="course-features">
                 <li>Apuntes teóricos incluidos</li>
-                <li>Material necesario para prácticas de tatuaje en el centro</li>
+                <li>
+                  Material necesario para prácticas de tatuaje en el centro
+                </li>
                 <li>Aula y espacios necesarios</li>
                 <li>Camiseta del curso</li>
                 <li>Diploma al terminar el curso</li>
               </ul>
-              <div class="course-button">
-                <a href="#" class="cta-button" onclick="scrollToSection(4)">Más Información</a>
-              </div>
             </div>
 
             <div class="course-card fade-in">
               <h3>Auxiliar + Higiénico Sanitario</h3>
+                            <div class="course-price">1100€</div>
+
               <div class="course-details">
                 <p><strong>Duración:</strong> 210 horas</p>
-                <p><strong>Online:</strong> 90h | <strong>Presencial:</strong> 30h</p>
+                <p>
+                  <strong>Online:</strong> 90h |
+                  <strong>Presencial:</strong> 30h
+                </p>
                 <p><strong>Sanitario:</strong> 90h adicionales</p>
-                <p><strong>Requisitos:</strong> El alumno debe traer su propia máquina de tatuar</p>
-                <p><strong>Estudios requeridos:</strong> No se requieren estudios previos</p>
+                <!-- <p>
+                  <strong>Requisitos:</strong> El alumno debe traer su propia
+                  máquina de tatuar
+                </p>
+                <p>
+                  <strong>Estudios requeridos:</strong> No se requieren estudios
+                  previos
+                </p> -->
               </div>
-              <div class="course-price">1100€</div>
               <ul class="course-features">
                 <li>Todo lo del curso básico</li>
                 <li>Certificación higiénico-sanitaria</li>
@@ -938,19 +1018,20 @@
                 <li>Gestión de residuos sanitarios</li>
                 <li>Doble diploma</li>
               </ul>
-              <div class="course-button">
-                <a href="#" class="cta-button" onclick="scrollToSection(4)">Más Información</a>
-              </div>
             </div>
 
             <div class="course-card fade-in">
               <h3>Higiénico Sanitario</h3>
+                            <div class="course-price">390€</div>
+
               <div class="course-details">
                 <p><strong>Duración:</strong> 90 horas</p>
                 <p><strong>Modalidad:</strong> MF_0064</p>
-                <p><strong>Estudios requeridos:</strong> No se requieren estudios previos</p>
+                <!-- <p>
+                  <strong>Estudios requeridos:</strong> No se requieren estudios
+                  previos
+                </p> -->
               </div>
-              <div class="course-price">390€</div>
               <ul class="course-features">
                 <li>Apuntes teóricos completos</li>
                 <li>Aula especializada</li>
@@ -958,18 +1039,20 @@
                 <li>Prevención de riesgos</li>
                 <li>Normativa sanitaria</li>
               </ul>
-              <div class="course-button">
-                <a href="#" class="cta-button" onclick="scrollToSection(4)">Más Información</a>
-              </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       <!-- Additional Courses Section -->
-      <section class="section additional-courses" style="background: var(--primary-color); color: white;">
+      <!-- <section
+        class="section additional-courses"
+        style="background: var(--primary-color); padding-top: 3.3vh; color: white"
+      >
         <div class="course-content">
-          <h2 class="fade-in" style="color: white;">¿Qué es un aprendiz de tatuador?</h2>
+          <h2 class="fade-in" style="color: white">
+            ¿Qué es un aprendiz de tatuador?
+          </h2>
           <p class="about-text fade-in">
             Un aprendiz de tatuador es alguien que está comenzando su camino en
             el arte del tatuaje. Normalmente, un aprendiz observa y asiste a un
@@ -979,120 +1062,284 @@
           <p class="about-text fade-in">
             Durante el aprendizaje, la persona no solo practica el dibujo y la
             técnica del tatuaje, sino que también aprende: higiene y seguridad,
-            conocimiento de la piel, diseño y arte, manejo del equipo y trato con
-            clientes.
+            conocimiento de la piel, diseño y arte, manejo del equipo y trato
+            con clientes.
           </p>
-          <!-- <p class="about-text fade-in">
+          <p class="about-text fade-in">
             En la mayoría de los casos, un aprendiz pasa meses o incluso años en
             esta etapa antes de poder tatuar libremente a clientes de forma
             profesional.
-          </p> -->
+          </p>
           <div class="competencies">
-           
             <div class="competency fade-in">
               <h4>Competencias Técnicas</h4>
-              <p>Conocimiento básico de higiene, bioseguridad y esterilización de materiales.</p>
+              <p>
+                Conocimiento básico de higiene, bioseguridad y esterilización de
+                materiales.
+              </p>
             </div>
             <div class="competency fade-in">
               <h4>&nbsp;</h4>
-              <p>Manejo inicial de la máquina de tatuar (configuración, montaje y limpieza).</p>
+              <p>
+                Manejo inicial de la máquina de tatuar (configuración, montaje y
+                limpieza).
+              </p>
             </div>
             <div class="competency fade-in">
               <h4>&nbsp;</h4>
-              <p>Preparación de la piel del cliente (rasurado, desinfección y aplicación de stencil).</p>
+              <p>
+                Preparación de la piel del cliente (rasurado, desinfección y
+                aplicación de stencil).
+              </p>
             </div>
             <div class="competency fade-in">
               <h4>&nbsp;</h4>
-              <p>Selección y uso adecuado de agujas, tintas y fuentes de poder.</p>
+              <p>
+                Selección y uso adecuado de agujas, tintas y fuentes de poder.
+              </p>
             </div>
             <div class="competency fade-in">
               <h4>&nbsp;</h4>
-              <p>Control básico de línea, sombreado y relleno en prácticas sobre piel sintética o fruta.</p>
+              <p>
+                Control básico de línea, sombreado y relleno en prácticas sobre
+                piel sintética o fruta.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Conocimiento de primeros auxilios básicos ante reacciones o
+                complicaciones menores.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Prevención de riesgos biológicos e identificación de agentes
+                infecciosos.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Aplicación de protocolos de asepsia, antisepsia y desinfección.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Manejo seguro del material y equipos, minimizando riesgo de
+                contaminación cruzada.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Uso adecuado de equipos de protección individual (EPI).</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Gestión correcta de residuos sanitarios según normativa.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Actuación en situaciones de emergencia y exposiciones
+                accidentales.
+              </p>
+            </div>
+
+            <div class="competency fade-in">
+              <h4>Competencias Artísticas</h4>
+              <p>Desarrollo de la observación y dibujo a mano alzada.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Manejo de diseño digital y programas básicos de ilustración para
+                tatuajes.
+              </p>
             </div>
             <div class="competency fade-in">
               <h4>&nbsp;</h4>
               <p>Nociones de composición, proporción, sombreado y color.</p>
             </div>
-            <div class="competency fade-in"></div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Capacidad para adaptar un diseño a las características de la
+                piel y zona del cuerpo.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Creatividad para proponer variaciones y personalizaciones en los
+                diseños.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Estudio de diferentes estilos de tatuaje (tradicional, realismo,
+                geométrico, etc.).
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Desarrollo de un portfolio artístico personal.</p>
+            </div>
+
+            <div class="competency fade-in">
+              <h4>Competencias Personales y Profesionales</h4>
+              <p>
+                Comunicación efectiva con el cliente (saber escuchar y explicar
+                el proceso).
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Paciencia y concentración durante la práctica y ejecución.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Responsabilidad con el cumplimiento de normas de bioseguridad.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Capacidad de trabajar bajo supervisión y aceptar
+                retroalimentación.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Ética profesional: respeto al cliente, confidencialidad y
+                rechazo a prácticas inseguras.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>Gestión del tiempo y disciplina en la práctica constante.</p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Atención al cliente desde la perspectiva sanitaria y estética.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Capacidad para detectar situaciones de riesgo y actuar en
+                consecuencia.
+              </p>
+            </div>
+            <div class="competency fade-in">
+              <h4>&nbsp;</h4>
+              <p>
+                Desarrollo de habilidades de venta y presentación de servicios.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="section additional-courses">
         <div class="course-content">
           <h2 class="fade-in">Más Cursos Especializados</h2>
           <div class="course-list">
             <div class="course-item fade-in">
               <h3>Curso Especializado con Prácticas Remuneradas</h3>
-              <p>Formación completa con experiencia laboral real en estudios asociados.</p>
+              <p>
+                Formación completa con experiencia laboral real en estudios
+                asociados.
+              </p>
             </div>
             <div class="course-item fade-in">
               <h3>Anillador</h3>
-              <p>Especialízate en la técnica del anillado para piercings y modificaciones corporales.</p>
+              <p>
+                Especialízate en la técnica del anillado para piercings y
+                modificaciones corporales.
+              </p>
             </div>
             <div class="course-item fade-in">
               <h3>Anillador + Higiénico Sanitario Oficial</h3>
-              <p>Doble certificación para ejercer como anillador profesional con todas las garantías sanitarias.</p>
+              <p>
+                Doble certificación para ejercer como anillador profesional con
+                todas las garantías sanitarias.
+              </p>
             </div>
             <div class="course-item fade-in">
               <h3>Técnico de Tatuaje</h3>
-              <p>Formación avanzada para tatuadores que buscan perfeccionar su técnica y estilo.</p>
+              <p>
+                Formación avanzada para tatuadores que buscan perfeccionar su
+                técnica y estilo.
+              </p>
             </div>
             <div class="course-item fade-in">
               <h3>Auxiliar Administrativo para Estudios de Tatuajes</h3>
-              <p>Gestión y administración especializada para estudios de tatuaje y piercing.</p>
+              <p>
+                Gestión y administración especializada para estudios de tatuaje
+                y piercing.
+              </p>
             </div>
           </div>
-          <div style="margin-top: 3rem;">
-            <a href="#" class="cta-button" onclick="scrollToSection(4)">Solicitar Información</a>
+          <div style="margin-top: 3rem">
+            <a   href="https://wa.me/34611601309?text=Te escribía para solicitar información sobre el curso de tatuaje"
+                class="cta-button" onclick="scrollToSection(4)"
+              >Solicitar Información</a
+            >
           </div>
         </div>
+        <div
+        style="
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+        "
+      >
+        <img
+          src="./junta.jpeg"
+          alt="Andalucía"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+        <img
+          src="./verde.jpeg"
+          alt="España"
+          style="width: 220px; margin: 0 0.5rem"
+        />
+      </div>
+    </div>
       </section>
-
-      
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-grid">
-          <!-- <div class="footer-section">
-            <h3>HLVTATTOO Academy</h3>
-            <p>
-              Formación profesional en tatuajes con certificación oficial.
-              Conviértete en un tatuador profesional con nosotros.
-            </p>
-          </div> -->
-
-          <div class="footer-section">
-            <h3>Contacto</h3>
-            <a href="tel:+34611601309"> +34 611 601 309</a>
-            <a href="mailto:huelvatattoo@gmail.com"> huelvatattoo@gmail.com</a>
-            <p> Huelva, España</p>
-          </div>
-
-          <div class="footer-section">
-            <h3>Cursos</h3>
-            <a href="#" onclick="scrollToSection(1)">Auxiliar de Tatuaje</a>
-            <a href="#" onclick="scrollToSection(1)"
-              >Auxiliar + Higiénico Sanitario</a
-            >
-            <a href="#" onclick="scrollToSection(1)">Higiénico Sanitario</a>
-          </div>
-
-          <!-- <div class="footer-section">
-            
-            <p>Horario: Lun-Vie 9:00-18:00</p>
-          </div> -->
-        </div>
-
-        <div class="footer-bottom">
-          <p>
-            &copy; 2025 HLVTATTOO Academy. Todos los derechos reservados. |
-            Política de Privacidad | Términos y Condiciones
-          </p>
-        </div>
-      </div>
-    </footer>
+    <!-- <div
+        style="
+          position: absolute;
+          bottom: 2rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+        "
+      >
+        <img
+          src="./junta.jpeg"
+          alt="Andalucía"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+        <img
+          src="./verde.jpeg"
+          alt="España"
+          style="width: 200px; margin: 0 0.5rem"
+        />
+      </div> -->
 
     <script>
       // Mobile menu toggle
@@ -1199,5 +1446,4 @@
       window.addEventListener("resize", updateActiveDot);
     </script>
   </body>
-
 </html>
